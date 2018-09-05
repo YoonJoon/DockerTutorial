@@ -7,7 +7,7 @@
 -	환경을 신속하게 테스트하여 모든 설정이 완료되었는지 확인하십시오.
 
 	```
-	docker run hello-world</code>
+	docker run hello-world
 	```
 
 #### 개요
@@ -161,7 +161,7 @@ $ docker run -d -p 4000:80 friendlyhello
 
 ![docker_container_ls](Pics/screen_shot-16.png)
 
-<code>CONTAINER ID<code>는 <code>http://localhost:4000</code>의 출력과 일치합니다.
+<code>CONTAINER ID</code>는 <code>http://localhost:4000</code>의 출력과 일치합니다.
 
 <code>CONTAINER ID</code>를 사용하여 프로세스를 종료하려면 다음과 같이 <code>docker container stop</code>을 사용하십시오.
 
