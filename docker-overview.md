@@ -102,12 +102,12 @@ $ docker run -i -t ubuntu /bin/bash
 
 (기본 레지스트리 구성을 사용한다고 가정하고) 이 명령을 실행하면 다음을 수행합니다.
 
-1.	ubuntu 이미지가 로컬에 없으면 Docker는 "docker pull ubuntu" 명령을 수동으로 실행한 것처럼 구성된 레지스트리에서 해당 이미지를 가져옵니다.
-2.	Docker는 "docker container create" 명령을 수동으로 실행한 것처럼 새 컨테이너를 셍성합니다.
+1.	<code>ubuntu<code> 이미지가 로컬에 없으면 Docker는 <code>docker pull ubuntu</code> 명령을 수동으로 실행한 것처럼 구성된 레지스트리에서 해당 이미지를 가져옵니다.
+2.	Docker는 <code>docker container create</code> 명령을 수동으로 실행한 것처럼 새 컨테이너를 셍성합니다.
 3.	Docker는 데이터를 읽고 쓸 수 있도록 파일 시스템을 최종 레이어로 컨테이너에 할당합니다. 이를 통해 실행 중인 컨테이너는 로컬 파일 시스템의 파일과 디렉토리를 작성하거나 수정할 수 있습니다.
 4.	위의 명령애서 네트워킹 옵션을 지정하지 않았으므로 Docker는 컨테이너를 기본 네트워크에 연결할 수 있도록 네트워크 인터페이스를 만듭니다. 이때 컨테이너에 IP 주소 할당을 합니다. 기본적으로 컨테이너는 호스트 시스템의 네트워크 연결을 사용하여 외부 네트워크에 연결할 수 있습니다.
-5.	Docker는 컨테이너를 시작하고 "/bin/bash" 명령을 실행합니다. (-i 및 -t 플래그를 표시하였기 때문에) 컨테이너는 터미널에 연결되어 대화식으로 실행되므로 출력이 터미널에 기록되는 동안 키보드를 사용하여 명령을 입력할 수 있습니다.
-6.	"exit" 명령을 입력하여 "/bin/bash"를 종료하면 컨테이너는 실행을 중지하지만 제거되지는 않습니다. 다시 시작하거나 제거할 수 있습니다.
+  5.	Docker는 컨테이너를 시작하고 <code>/bin/bash</code> 명령을 실행합니다. (<code>-i</code> 및 <code>-t</code> 플래그를 표시하였기 때문에) 컨테이너는 터미널에 연결되어 대화식으로 실행되므로 출력이 터미널에 기록되는 동안 키보드를 사용하여 명령을 입력할 수 있습니다.
+  6.	<code>exit</code> 명령을 입력하여 <code>/bin/bash</code>를 종료하면 컨테이너는 실행을 중지하지만 제거되지는 않습니다. 다시 시작하거나 제거할 수 있습니다.
 
 **서비스(SERVICES)**
 
@@ -119,7 +119,7 @@ Docker는 Go로 작성되었으며 Linux 커널의 여러 기능을 활용하여
 
 ##### Namespaces
 
-Docker는 **namespace** 라는 기술을 사용하여 *컨테이너* 라는 격리된 작업 영역을 제공합니다. 컨테이너를 실행할 때 Docker는 해당 컨테이너에 대한 *namespace* 를 만듭니다.
+Docker는 <code>namespace</code> 라는 기술을 사용하여 *컨테이너* 라는 격리된 작업 영역을 제공합니다. 컨테이너를 실행할 때 Docker는 해당 컨테이너에 대한 *namespace* 를 만듭니다.
 
 이러한 namespace는 격리 계층을 제공합니다. 컨테이너의 수행은 해당 namespace에서 실행되며 해당 namespace로 접근을 제한됩니다.
 
@@ -133,7 +133,7 @@ Docker Engine은 Linux에서 다음과 같은 namespace를 사용합니다.
 
 ##### 제어(Control) 그룹
 
-Linux에서 운영되는 Docker Engine은 *제어 그룹* (**cgroup**)이라는 또 다른 기술을 사용합니다. cgroup은 응용 프로그램이 사용할 수 있는 특정 자원 세트를 지정합니다. 제어 그룹을 통해 Docker Engine은 사용 가능한 하드웨어 리소스를 컨테이너들과 공유하며, 그에 대한 제한 및 제약 조건을 선택적으로 적용 할 수 있습니다. 예를 들어 특정 컨테이너의 메모리 사용을 제한 할 수 있습니다.
+Linux에서 운영되는 Docker Engine은 *제어 그룹* (<code>cgroup</code>)이라는 또 다른 기술을 사용합니다. cgroup은 응용 프로그램이 사용할 수 있는 특정 자원 세트를 지정합니다. 제어 그룹을 통해 Docker Engine은 사용 가능한 하드웨어 리소스를 컨테이너들과 공유하며, 그에 대한 제한 및 제약 조건을 선택적으로 적용 할 수 있습니다. 예를 들어 특정 컨테이너의 메모리 사용을 제한 할 수 있습니다.
 
 ##### Union 파일 시스템
 
@@ -141,10 +141,10 @@ Union 파일 시스템 (UnionFS)은 레이어를 생성하여 작동하는 파�
 
 ##### 컨테이너 형식
 
-Docker Engine은 namespace, 제어 그룹과 UnionFS를 컨테이너 형식이라는 래퍼로 결합합니다. 기본 컨테이너 형식은 **libcontainer** 입니다. 향후 Docker는 BSD Jails 또는 Solaris Zones와 같은 기술과 통합된 다른 컨테이너 형식을 지원할 수 있습니다.
+Docker Engine은 namespace, 제어 그룹과 UnionFS를 컨테이너 형식이라는 래퍼로 결합합니다. 기본 컨테이너 형식은 <code>libcontainer</code> 입니다. 향후 Docker는 BSD Jails 또는 Solaris Zones와 같은 기술과 통합된 다른 컨테이너 형식을 지원할 수 있습니다.
 
 #### 다음 단계
 
--	[Docker 설치](?)
--	[Docker 시작하기](?) 자습서 따라하기
--	[Docker 사용자 가이드](?) 살펴보기
+-	[Docker 설치](https://docs.docker.com/engine/installation/#installation)
+-	[Docker 시작하기](getStarted.md) 자습서 따라하기
+-	[Docker 사용자 가이드](https://docs.docker.com/engine/userguide/) 살펴보기
