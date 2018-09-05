@@ -169,6 +169,8 @@ $ docker run -d -p 4000:80 friendlyhello
 $ docker container stop b76b2c2f086f
 ```
 
+<a name="share-your-image"></a>
+
 #### 이미지 공유
 
 방금 생성한 이미지의 이식성을 보이기 위하여 빌드된 이미지를 업로드하고 동일한 플랫폼의 다른 어느 컴퓨터에서 실행하여 봅시다. 결국 운영 환경에서 컨테이너를 전개하려면 레지스트리로 등록하는 방법을 알아야 합니다.
