@@ -1,6 +1,8 @@
 ### 서비스
 
-#### <a name="prerequisites"></a>준비 사항
+<a name="prerequisites"></a>
+
+#### 준비 사항
 
 -	[Docker 버전 1.13 이상 설치](https://docs.docker.com/engine/installation/)
 -	[Docker 구성](https://docs.docker.com/compose/overview/) 하기. [Docker for Mac](https://docs.docker.com/docker-for-mac/) 및 [Docker for Windows](https://docs.docker.com/docker-for-windows/)에는 사전 설치 파일이 있어 진행할 수 있습니다. Linux 시스템에서는 [직접 설치해야 합니다](https://github.com/docker/compose/releases). *Hyper-V* 가 없는 Windows 10 이전 시스템에서는 [Docker Toolbox](https://docs.docker.com/toolbox/overview/)를 사용하여야 합니다.
@@ -104,11 +106,13 @@ docker service ps getstartedlab_web
 docker container ls -q
 ```
 
-한 줄에 <code>curl -4 http://localhost:4000</code> 명령을 연속으로 여러 번 실행하거나 브라우저에서 해당 URL로 이동하여 몇 번 새로 고침하십시오.
-
 ![localhost](Pics/screen_shot-19-01.png)
 
+한 줄에 <code>curl -4 http://localhost:4000</code> 명령을 연속으로 여러 번 실행하거나 브라우저에서 해당 URL로 이동하여 몇 번 새로 고침하십시오.
+
 ![localhost](Pics/screen_shot-19-02.png)
+
+![localhost](Pics/screen_shot-19.png)
 
 둘 중 어느 쪽이든, 컨테이너 ID가 변경되어 부하를 분산하는 것을 보여줍니다. 각 요청마다 5 타스크중 한 타스크가 라운드 로빈 방식으로 응답하도록 선택됩니다. 컨테이너 ID는 이전 명령 <code>docker container ls -q</code> 출력과 일치합니다.
 

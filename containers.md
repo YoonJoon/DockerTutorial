@@ -105,6 +105,8 @@ if __name__ == "__main__":
 
 이상입니다. 생성된 앱 수행을 위하여 <code>requirements.txt</code> 또는 Python은 더이상 필요하지 않으며 이미지를 빌드하거나 실행해도 시스템에 설치되지 않습니다. Python과 Flask로 환경을 설정한 것처럼 보이지도 않습니다. 그러나 앱에는 포함되어 있습니다.
 
+<a name="build-the-app"></a>
+
 #### 앱 빌드
 
 이제 앱을 만들 준비가 되었습니다. 새 디렉토리의 최상위 레벨에 있는지 확인하십시오. 여기에 어떤 파일이 있나 확인하여 봅니다:
@@ -208,6 +210,8 @@ docker tag friendlyhello /get-started:containers
 <code>docker image ls</code> 명령을 실행하면 새로 태그가 추가된 것을 볼 수 있습니다.
 
 ![docker_image_ls](Pics/screen_shot-17.png)
+
+<a name="publish-the-image"></a>
 
 ##### 이미지 게시(Publish)
 
