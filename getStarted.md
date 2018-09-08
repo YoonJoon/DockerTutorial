@@ -3,7 +3,7 @@ Docker 시작하기
 
 ### Orientation과 설정
 
-Docker에 발을 들여놓으신 것을 환영합니다! <code>Docker 시작하기 Tutorial</code> 는 아래에 대하여 설명합니다.
+Docker에 발을 들여놓으신 것을 환영합니다! <code>Docker 시작하기 Tutorial</code>은 아래에 대하여 설명합니다.
 
 1.	Docker 소개와 설정.
 2.	[이미지를 빌드하고 이를 컨테이너로 만들어 실행](containers.md).
@@ -20,7 +20,7 @@ Docker는 개발자 및 시스템 관리자가 컨테이너를 사용하여 응�
 
 -	유연성 : 아무리 복잡한 애플리케이션도 컨테이너화할 수 있습니다.
 -	경량 : 컨테이너는 호스트 커널을 활용하고 공유합니다.
--	교환 가능 : 업데이트 및 업그레이드시에 중단없이 배포할 수 있습니다.
+-	중단없는 배포 : 업데이트 및 업그레이드시에 중단없이 배포할 수 있습니다.
 -	Portable : 로컬에서 빌드하고, 클라우드에 전개하고, 어디서나 실행할 수 있습니다.
 -	확장성 : 컨테이너 복제본을 늘리고 자동으로 전개할 수 있습니다.
 -	스태킹 가능 : 서비스를 운영 중에 쌓을 수 있습니다.
@@ -29,7 +29,7 @@ Docker는 개발자 및 시스템 관리자가 컨테이너를 사용하여 응�
 
 ##### 이미지와 컨테이너
 
-이미지를 실행하여 컨테이너를 시작합니다. **이미지** 는 응용 프로그램 실행에 필요한 코드, 런타임, 라이브러리, 환경 변수 및 설정(configuaration) 파일 등 모든 것으로 구성된 실행 가능한 패키지입니다.
+이미지를 실행하여 컨테이너를 시작합니다. **이미지** 는 응용프로그램 실행에 필요한 코드, 런타임, 라이브러리, 환경 변수 및 설정(configuaration) 파일 등 모든 것으로 구성된 실행 가능한 패키지입니다.
 
 컨테이너는 이미지의 런타임 인스턴스입니다. 즉, 실행될 때 메모리에 있는 (상태 또는 사용자 프로세스 갖고 있는) 이미지입나다. Linux에서 처럼 <code>docker ps</code> 명령으로 실행 중인 컨테이너 목록을 볼 수 있습니다.
 
@@ -56,16 +56,29 @@ Docker는 개발자 및 시스템 관리자가 컨테이너를 사용하여 응�
 
 ##### Docker 버전 테스트
 
-1.	"docker --version"을 실행하고 지원되는 Docker 버전인지 확인하십시오. ![docker_version](Pics/screen_shot-04.png)
-2.	"docker info" (또는 --가 없는 "docker version")를 실행하면 docker 설치에 대한 자세한 내용을 볼 수 있습니다. ![docker_info](Pics/screen_shot-05.png)
+1.	"docker --version"을 실행하고 지원되는 Docker 버전인지 확인하십시오.
+
+	![docker_version](Pics/screen_shot-04.png)
+
+2.	"docker info" (또는 --가 없는 "docker version")를 실행하면 docker 설치에 대한 자세한 내용을 볼 수 있습니다.
+
+	![docker_info](Pics/screen_shot-05.png)
 
 > 권한 오류 (및 <code>sudo</code> 사용)를 방지하려면 docker 그룹에 사용자를 추가하십시오. 더욱 자세한 내용은 [여기](https://docs.docker.com/install/linux/linux-postinstall/)에서 찾아 볼 수 있습니다.
 
 ##### Docker 설치 테스트
 
-1.	간단한 Docker 이미지 [hello-world](https://hub.docker.com/_/hello-world/)를 실행하여 설치가 제대로 작동하는지 테스트하십시오. ![docker_hello-world](Pics/screen_shot-06.png)
-2.	컴퓨터에 다운로드된 "hello-world" 이미지를 나열해 보세요. ![docker_image_ls](Pics/screen_shot-07.png)
-3.	메시지를 표시 한 후 종료된 (이미지로부터 생성된) "hello-world" 컨테이너를 나열하십시오. 아직 실행 중이면 "--all" 옵션은 필요 없습니다. ![docker_containers_ls](Pics/screen_shot-08.png)
+1.	간단한 Docker 이미지 [hello-world](https://hub.docker.com/_/hello-world/)를 실행하여 설치가 제대로 작동하는지 테스트하십시오.
+
+	![docker_hello-world](Pics/screen_shot-06.png)
+
+2.	컴퓨터에 다운로드된 "hello-world" 이미지를 나열해 보세요.
+
+	![docker_image_ls](Pics/screen_shot-07.png)
+
+3.	메시지를 표시 한 후 종료된 (이미지로부터 생성된) "hello-world" 컨테이너를 나열하십시오. 아직 실행 중이면 "--all" 옵션은 필요 없습니다.
+
+![docker_containers_ls](Pics/screen_shot-08.png)
 
 #### 요약
 
