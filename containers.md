@@ -32,7 +32,7 @@ Docker를 사용하면 별도의 설치 없이 포터블(portable)한 Python 런
 
 ##### <code>Dockerfile</code>
 
-먼저, 새로운 디렉토리를 만듭니다. <code>cd</code>명령을 사용하여 현재 디렉토리를 새 디렉토리로 변경하고 <code>Dockerfile</code>이라는 파일에 다음 내용을 복사하여 저장하십시오. 아래에서 새로운 <code>Dockerfile</code>의 주석을 설명합니다.
+먼저, 새로운 디렉토리를 만듭니다. <code>cd</code>명령을 사용하여 현재 디렉토리를 새 디렉토리로 변경하고 <code>Dockerfile</code>이라는 파일에 다음 내용을 복사하여 저장하십시오. 아래에서 새로운 <code>Dockerfile</code>을 주석에서 설명합니다.
 
 ```
 # Use an official Python runtime as a parent image
@@ -57,7 +57,7 @@ ENV NAME World
 CMD ["python3", "app.py"]
 ```
 
-이 <code>Dockerfile</code>에 없는 파일, 즉 <code>app.py</code>와 <code>requirements.txt</code>를 참조합니다. 다음 단계에서 바로 만들어 보겠습니다.
+이 <code>Dockerfile</code>에서 지정하였지만 디렉토리에 없는 파일, 즉 <code>app.py</code>와 <code>requirements.txt</code>을 참조합니다. 다음 단계에서 바로 만들어 보겠습니다.
 
 #### 앱
 
@@ -109,7 +109,7 @@ if __name__ == "__main__":
 
 #### 앱 빌드
 
-이제 앱을 만들 준비가 되었습니다. 새 디렉토리의 최상위 레벨에 있는지 확인하십시오. 여기에 어떤 파일이 있나 확인하여 봅니다:
+이제 앱을 만들 준비가 되었습니다. 새 디렉토리에 있는지 확인하십시오. 여기에 어떤 파일이 있나 확인하여 봅니다:
 
 ![ls](Pics/screen_shot-12.png)
 
@@ -129,19 +129,19 @@ $ docker build -t friendlyhello
 
 #### 앱 실행
 
-응용 프로그램을 실행하여 <code>-p</code>를 사용하여 컴퓨터의 포트 4000을 컨테이너의 게시된 포트 80으로 매핑하여 응용 프로그램을 실행합니다.
+응용프로그램을 실행하여 <code>-p</code>를 사용하여 컴퓨터의 포트 4000을 컨테이너의 게시된 포트 80으로 매핑하여 응용 프로그램을 실행합니다.
 
 ```
 docker run -p 4000:80 friendlyhello
 ```
 
-Python이 <code>http://.0.0.0.0:80</code>에서 앱을 서비스한다는 메시지를 출력합니다. 메시지는 컨테이너 내부로부터 나오지만, URL <code>http://localhost:4000</code>이 컨테이너의 포트 80을 4000으로 매핑한 정보는 보여주지 않습니다.
+Python이 <code>http://.0.0.0.0:80</code>에서 앱을 서비스한다는 메시지를 출력합니다. 메시지는 컨테이너 내부로부터 나오는 것이만, URL <code>http://localhost:4000</code>이 컨테이너의 포트 80을 4000으로 매핑한 정보는 보여주지 않습니다.
 
 웹 브라우저에 해당 URL을 입력하여 웹 페이지에 출력된 내용을 볼 수 있습니다.
 
 ![docker_run](Pics/screen_shot-14.png)
 
-shell에서 <code>curl</code> 명령을 사용하여 동일한 내용을 볼 수 있습니다.
+shell에서 <code>curl</code> 명령을 사용하여 같은 내용을 볼 수 있습니다.
 
 ![docker_run](Pics/screen_shot-15.png)
 
@@ -215,7 +215,7 @@ docker tag friendlyhello /get-started:containers
 
 ##### 이미지 게시(Publish)
 
-태그가 지정된 이미지를 리퍼지토리에 업로드합니다.
+태그가 지정된 이미지를 리퍼지토리에 등록합니다.
 
 ```
 docker push username/repository:tag
