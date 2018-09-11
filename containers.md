@@ -116,7 +116,7 @@ if __name__ == "__main__":
 빌드 명령을 실행하면 Docker 이미지가 만들어지며, 이 이미지는 태그 -t를 사용하여 이름를 지정할 수 있습니다.
 
 ```
-$ docker build -t friendlyhello
+$ docker build -t friendlyhello .
 ```
 
 빌드된 이미지는 컴퓨터의 로컬 Docker 이미지 레지스트리에 있습니다.
