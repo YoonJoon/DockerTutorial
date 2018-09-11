@@ -204,7 +204,7 @@ docker tag image username/repository:tag
 예를 들면
 
 ```
-docker tag friendlyhello /get-started:containers
+docker tag friendlyhello yjbenlee/get-started:containers
 ```
 
 <code>docker image ls</code> 명령을 실행하면 새로 태그가 추가된 것을 볼 수 있습니다.
